@@ -1,10 +1,10 @@
 <?php
 	// memulai session
 	session_start();
-	// membaca nilai variabel session 
+	// membaca nilai variabel session
 	$chk_sess = $_SESSION['leader'];
 	// memanggil file koneksi
-	include("dist/config/koneksi.php");
+	include("../dist/config/koneksi.php");
 	include("dist/config/library.php");
 	// mengambil data pengguna dari tabel pengguna
 	$sql_sess = "SELECT * FROM employee WHERE npp='". $chk_sess ."'";
@@ -17,4 +17,3 @@
 	if(! isset($chk_sess)) {
 		header("location: ../login.php?login=false");
 	}
-?>
