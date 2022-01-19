@@ -1,10 +1,12 @@
 <?php
-  //error_reporting(0);
+//error_reporting(0);
 
-  $dbhost = "localhost";
-  $dbuser = "root";
-  $dbpass = "";
-  $dbname = "db_cuti";
+$dbhost = "localhost";
+$dbuser = "almardiy_aplikasicuti";
+$dbpass = "almardiy_aplikasicuti";
+$dbname = "almardiy_aplikasicuti";
 
-  $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname) or die("Tidak dapat terhubung ke database: ".mysqli_error());
-?>
+$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+if ($conn) {
+  die("Tidak dapat terhubung ke database: " . mysqli_error($conn));
+}
