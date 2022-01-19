@@ -1,97 +1,76 @@
-<?php $pagedesc = "Login"; ?>
 <!DOCTYPE html>
 <html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="">
-	<meta name="author" content="">
-
 	<title>Sistem Informasi Pengajuan Cuti Online - <?php echo $pagedesc ?></title>
-
 	<link href="libs/images/logo_perusahaan.png" rel="icon" type="images/x-icon">
-
-	<!-- Bootstrap Core CSS -->
-	<link href="libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-
-	<!-- Custom CSS -->
-	<link href="dist/css/offline-font.css" rel="stylesheet">
-	<link href="dist/css/custom.css" rel="stylesheet">
-
-	<!-- Custom Fonts -->
-	<link href="libs/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	
-	<!-- jQuery -->
-	<script src="libs/jquery/dist/jquery.min.js"></script>
-
-	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	<!--[if lt IE 9]>
-	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-	<![endif]-->
+	<!-- Meta tags -->
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="Gaze Sign up & login Form Responsive Widget, Audio and Video players, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, Flat Web Templates, Login Sign-up Responsive Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design" />
+	<!-- Meta tags -->
+	<!--stylesheets-->
+	<link href="./login/css/style.css" rel='stylesheet' type='text/css' media="all">
+	<!--//style sheet end here-->
+	<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
 </head>
 
-<body style="background-color: #f1f4f7">
+<body>
 
-	<section id="main-wrapper" style="margin-top: 70px">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4"><?php include("layout_alert.php"); ?></div>
-			</div><!-- /.row -->
-			<div class="row">
-				<div id="page-wrapper" class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4" style="background-color: #ffffff; border-radius: 3px; webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05); box-shadow: 0 1px 1px rgba(0,0,0,.05)">
-					<div class="row">
-						<div class="col-lg-12">
-							<br/>
-							<center><img src="libs/images/logo_perusahaan.png" width="120" height="120"></center>
-							<h2 class="text-center">Sistem Informasi Pengajuan Cuti<br/> <b>CV. Indosari</b></h2>
+	<body>
+		<div class="mid-class">
+			<!---728x90--->
+
+			<div class="art-right-w3ls">
+				<!---728x90--->
+				<h2>Login</h2>
+				<?php if (isset($_GET['err'])) : ?>
+					<?php if ($_GET['err'] == 'not_found') : ?>
+						<p style="margin-bottom: 10px; color:#f9f9f9">Maaf, nama pengguna atau password salah.</p>
+					<?php endif ?>
+					<?php if ($_GET['err'] == 'empty') : ?>
+						<p style="margin-bottom: 10px; color:#f9f9f9">Maaf, nama pengguna atau password harus di isi</p>
+					<?php endif ?>
+				<?php endif ?>
+				<form action="login_auth.php" method="post">
+					<div class="main">
+						<div class="form-left-to-w3l">
+							<input type="text" name="username" placeholder="Username" name="username" required="">
 						</div>
-					</div><!-- /.row -->
-					<div class="row">
-						<div class="col-lg-12">
-							<div class="panel panel-default">
-								<div class="panel-body">
-									<form action="login_auth.php" method="post">
-										<div class="form-group">
-											<input type="text" class="form-control" name="username" placeholder="Username" required>
-										</div>
-										<div class="form-group">
-											<input type="password" class="form-control" name="password" placeholder="Password" required>
-										</div>
-										<div class="form-group">
-											<select class="form-control" name="akses" required>
-											<option value="">    Login Sebagai     </option>
-											<option value="Admin">Administrator/HRD</option>
-											<option value="Lead">Leader</option>
-											<option value="Mng">Manager</option>
-											<option value="Pgw">Karyawan</option>
-											<option value="Spv">Supervisor</option>
-											</select>
-										</div>
-										<div class="form-group">
-											<input type="submit" class="btn btn-success btn-block" name="login" value="Masuk">
-										</div>
-									</form>
-								</div>
-							</div>
-						</div><!-- /.col -->
-					</div><!-- /.row -->
-				</div><!-- /.col -->
-			</div><!-- /.row -->
-		</div><!-- /.container -->
-	</section>
-	
-	<!-- footer-bottom -->
-	<div class="navbar navbar-inverse navbar-fixed-bottom footer-bottom">
-		<div class="container text-center">
-			<p class="text-center" style="color: #D1C4E9; margin: 0 0 5px; padding: 0"><small>Sistem Informasi Pengajuan Cuti Online CV. Indosari</small></p>
+						<div class="form-left-to-w3l ">
+							<input type="password" name="password" placeholder="Password" name="password" required="">
+							<div class="clear"></div>
+						</div>
+						<div class="form-left-to-w3l ">
+							<select name="akses" required>
+								<option value=""> Login Sebagai </option>
+								<option value="Admin">Administrator/HRD</option>
+								<option value="Lead">Leader</option>
+								<option value="Mng">Manager</option>
+								<option value="Pgw">Karyawan</option>
+								<option value="Spv">Supervisor</option>
+							</select>
+						</div>
+					</div>
+					<div class="btnn">
+						<button type="submit" name="login">Masuk</button>
+					</div>
+				</form>
+			</div>
+			<!---728x90--->
+			<div class="art-left-w3ls">
+				<h1 class="header-w3ls">
+					Sistem Informasi Pengajuan Cuti
+					CV. Indosari
+				</h1>
+			</div>
 		</div>
-	</div><!-- /.footer-bottom -->
+		<footer class="bottem-wthree-footer">
+			<p>
+				Sistem Informasi Pengajuan Cuti Online CV. Indosari
+			</p>
+		</footer>
+	</body>
 
-	<!-- Bootstrap Core JavaScript -->
-	<script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
-
-</body>
 </html>

@@ -1,7 +1,7 @@
 <?php
 	// memulai session
 	session_start();
-	// membaca nilai variabel session 
+	// membaca nilai variabel session
 	$chk_sess = $_SESSION['admin'];
 	// memanggil file koneksi
 	include("dist/config/koneksi.php");
@@ -18,4 +18,3 @@
 	if(! isset($chk_sess)) {
 		header("location: login.php?login=false");
 	}
-?>
