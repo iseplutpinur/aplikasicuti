@@ -46,10 +46,8 @@
 							<select name="akses" required>
 								<option value=""> Login Sebagai </option>
 								<option value="Admin">Administrator/HRD</option>
-								<option value="Lead">Leader</option>
 								<option value="Mng">Manager</option>
 								<option value="Pgw">Karyawan</option>
-								<option value="Spv">Supervisor</option>
 							</select>
 						</div>
 					</div>
