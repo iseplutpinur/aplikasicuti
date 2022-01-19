@@ -1,19 +1,20 @@
 <?php
-	include("sess_check.php");
+include("sess_check.php");
 
-	include("dist/function/format_tanggal.php");
-	include("dist/function/format_rupiah.php");
-	$no 	 = $_GET['no'];
-	$sql = "SELECT cuti.*, employee.* FROM cuti, employee WHERE cuti.npp=employee.npp
+include("dist/function/format_tanggal.php");
+include("dist/function/format_rupiah.php");
+$no 	 = $_GET['no'];
+$sql = "SELECT cuti.*, employee.* FROM cuti, employee WHERE cuti.npp=employee.npp
 			AND cuti.no_cuti ='$no'";
-	$query = mysqli_query($conn,$sql);
-	$result = mysqli_fetch_array($query);
-	// deskripsi halaman
-	$pagedesc = "Cetak Form Cuti";
-	$pagetitle = str_replace(" ", "_", $pagedesc)
+$query = mysqli_query($conn, $sql);
+$result = mysqli_fetch_array($query);
+// deskripsi halaman
+$pagedesc = "Cetak Form Cuti";
+$pagetitle = str_replace(" ", "_", $pagedesc)
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -34,7 +35,7 @@
 
 	<!-- Custom Fonts -->
 	<link href="libs/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	
+
 	<!-- jQuery -->
 	<script src="libs/jquery/dist/jquery.min.js"></script>
 
@@ -56,84 +57,85 @@
 							<img src="libs/images/logo_perusahaan.png" alt="logo-dkm" width="70" />
 						</td>
 						<td class="text-center" width="60%">
-						<b>CV. Indosari</b> <br>
-						Jl.Sapan Rancakaso, Desa Tegalluar, Kec.Bojongsoang, Kab.Bandung, Jawa Barat 30522 <br><br>
-						Telp: (021) 89115030<br>
+							<b>CV. Indosari</b> <br>
+							Jl.Sapan Rancakaso, Desa Tegalluar, Kec.Bojongsoang, Kab.Bandung, Jawa Barat 30522 <br>
+							Telp: (021) 89115030<br>
 						<td class="text-right" width="20%">
-							<img src="libs/images/logo_perusahaan.png" alt="logo-dkm" width="70"/>
+							<img src="libs/images/logo_perusahaan.png" alt="logo-dkm" width="70" />
 						</td>
 					</tr>
 				</tbody>
 			</table>
+			</table>
 			<hr class="line-top" />
 		</div>
 	</section>
-<br/>
-<br/>
+	<br />
+	<br />
 	<section id="body-of-report">
 		<div class="container-fluid">
 			<h4 class="text-center">FORM PENGAJUAN CUTI (APPROVED)</h4>
 			<br />
 			<br />
 			<table class="table table-bordered">
-<h3>
-				<tbody>
-					<tr>
-						<td width="30%">No. Cuti</td>
-						<td><?php echo $result['no_cuti'];?></td>
-					</tr>
-					<tr>
-						<td>NPP</td>
-						<td><?php echo $result['npp'] ?></td>
-					</tr>
-					<tr>
-						<td>Pemohon</td>
-						<td><?php echo $result['nama_emp'] ?></td>
-					</tr>
-					<tr>
-						<td>Telepon</td>
-						<td><?php echo $result['telp_emp'];?></td>
-					</tr>
-					<tr>
-						<td>Divisi</td>
-						<td><?php echo $result['divisi'];?></td>
-					</tr>
-					<tr>
-						<td>Jabatan</td>
-						<td><?php echo $result['jabatan'];?></td>
-					</tr>
-					<tr>
-						<td>Tanggal Pengajuan</td>
-						<td><?php echo IndonesiaTgl($result['tgl_pengajuan']);?></td>
-					</tr>
-					<tr>
-						<td>Tanggal Mulai</td>
-						<td><?php echo IndonesiaTgl($result['tgl_awal']);?></td>
-					</tr>
-					<tr>
-						<td>Tanggal Akhir</td>
-						<td><?php echo IndonesiaTgl($result['tgl_akhir']);?></td>
-					</tr>
-					<tr>
-						<td>Durasi</td>
-						<td><?php echo $result['durasi'];?> Hari</td>
-					</tr>
-					<tr>
-						<td>Keterangan</td>
-						<td><?php echo $result['keterangan'];?></td>
-					</tr>
-					<tr>
-						<td>Status</td>
-						<td><?php echo $result['stt_cuti'];?></td>
-					</tr>
-				</tbody>
+				<h3>
+					<tbody>
+						<tr>
+							<td width="30%">No. Cuti</td>
+							<td><?php echo $result['no_cuti']; ?></td>
+						</tr>
+						<tr>
+							<td>NPP</td>
+							<td><?php echo $result['npp'] ?></td>
+						</tr>
+						<tr>
+							<td>Pemohon</td>
+							<td><?php echo $result['nama_emp'] ?></td>
+						</tr>
+						<tr>
+							<td>Telepon</td>
+							<td><?php echo $result['telp_emp']; ?></td>
+						</tr>
+						<tr>
+							<td>Divisi</td>
+							<td><?php echo $result['divisi']; ?></td>
+						</tr>
+						<tr>
+							<td>Jabatan</td>
+							<td><?php echo $result['jabatan']; ?></td>
+						</tr>
+						<tr>
+							<td>Tanggal Pengajuan</td>
+							<td><?php echo IndonesiaTgl($result['tgl_pengajuan']); ?></td>
+						</tr>
+						<tr>
+							<td>Tanggal Mulai</td>
+							<td><?php echo IndonesiaTgl($result['tgl_awal']); ?></td>
+						</tr>
+						<tr>
+							<td>Tanggal Akhir</td>
+							<td><?php echo IndonesiaTgl($result['tgl_akhir']); ?></td>
+						</tr>
+						<tr>
+							<td>Durasi</td>
+							<td><?php echo $result['durasi']; ?> Hari</td>
+						</tr>
+						<tr>
+							<td>Keterangan</td>
+							<td><?php echo $result['keterangan']; ?></td>
+						</tr>
+						<tr>
+							<td>Status</td>
+							<td><?php echo $result['stt_cuti']; ?></td>
+						</tr>
+					</tbody>
 				</h3>
 			</table>
 			<br>
 			<div>
-			<label>*Form ini dicetak oleh sistem dan tidak memerlukan tanda tangan atau pengesahan lain.</label>
+				<label>*Form ini dicetak oleh sistem dan tidak memerlukan tanda tangan atau pengesahan lain.</label>
 			</div>
-			
+
 		</div><!-- /.container -->
 	</section>
 
@@ -149,4 +151,5 @@
 	<script src="libs/jTerbilang/jTerbilang.js"></script>
 
 </body>
+
 </html>
