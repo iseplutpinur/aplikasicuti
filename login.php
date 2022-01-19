@@ -45,8 +45,8 @@
 						<div class="form-left-to-w3l ">
 							<select name="akses" required>
 								<option value=""> Login Sebagai </option>
-								<option value="Admin">Administrator/HRD</option>
-								<option value="Mng">Manager</option>
+								<option value="Admin">Staf Admin</option>
+								<option value="Mng">HRD</option>
 								<option value="Pgw">Karyawan</option>
 							</select>
 						</div>
