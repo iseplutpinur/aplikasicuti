@@ -17,7 +17,7 @@ if($aksi=="2"){
 			WHERE no_cuti='". $no ."'";
 		$ress = mysqli_query($conn, $sql);
 		header("location: approval_cuti.php?act=update&msg=success");
-	
+
 }else{
 	$stt="Menunggu Approval Manager";
 	$num	=1;
@@ -28,6 +28,5 @@ if($aksi=="2"){
 			WHERE no_cuti='". $no ."'";
 		$ress = mysqli_query($conn, $sql);
 		header("location: approval_cuti.php?act=update&msg=success");
-	
+
 }
-?>

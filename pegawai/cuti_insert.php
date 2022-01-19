@@ -6,14 +6,14 @@ $ajuan = date('Y-m-d');
 $mulai	= $_POST['mulai'];
 $akhir	= $_POST['akhir'];
 $ket	= $_POST['keterangan'];
-$leader	= $_POST['leader'];
+$manager	= $_POST['manager'];
 
 $start = new DateTime($mulai);
 $finish = new DateTime($akhir);
 $int = $start->diff($finish);
 $dur = $int->days;
 $durasi = $dur + 1;
-$stt = "Menunggu Approval Leader";
+$stt = "Menunggu Approval Manager";
 
 $id = date('dmYHis');
 
@@ -30,8 +30,8 @@ if ($durasi > $jml) {
 			document.location = 'cuti_create.php';
 		</script>";
 } else {
-	$sql 	= "INSERT INTO cuti (no_cuti, npp  , tgl_pengajuan, tgl_awal, tgl_akhir, durasi  , keterangan, leader, stt_cuti)
-										VALUES 	('$id'  ,'$npp','$ajuan'      , '$mulai','$akhir'  ,'$durasi','$ket'     , $leader,      '$stt')";
+	$sql 	= "INSERT INTO cuti (no_cuti, npp  , tgl_pengajuan, tgl_awal, tgl_akhir, durasi  , keterangan, manager, stt_cuti)
+										VALUES 	('$id'  ,'$npp','$ajuan'      , '$mulai','$akhir'  ,'$durasi','$ket'     , $manager,      '$stt')";
 	$query 	= mysqli_query($conn, $sql);
 	if ($query) {
 		echo "<script type='text/javascript'>

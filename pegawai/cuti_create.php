@@ -66,21 +66,21 @@ $npp = $sess_pegawaiid;
 								</div>
 							</div>
 							<div class="form-group">
-								<label class="control-label col-sm-3">Leader</label>
+								<label class="control-label col-sm-3">Manager</label>
 								<div class="col-sm-4">
-									<select name="leader" id="leader" class="form-control" required>
-										<option value="" selected>======== Pilih Leader ========</option>
+									<select name="manager" id="manager" class="form-control" required>
+										<option value="" selected>======== Pilih Manager ========</option>
 										<?php
-										$mySql = "SELECT * FROM employee WHERE hak_akses='Leader' AND active='Aktif' ORDER BY nama_emp";
+										$mySql = "SELECT * FROM employee WHERE hak_akses='Manager' AND active='Aktif' ORDER BY nama_emp";
 										$myQry = mysqli_query($conn, $mySql);
-										$dataLeader = $result['npp'];
-										while ($leaderData = mysqli_fetch_array($myQry)) {
-											if ($leaderData['npp'] == $dataLeader) {
+										$dataManager = $result['npp'];
+										while ($managerData = mysqli_fetch_array($myQry)) {
+											if ($managerData['npp'] == $dataManager) {
 												$cek = " selected";
 											} else {
 												$cek = "";
 											}
-											echo "<option value='$leaderData[npp]' $cek>" . $leaderData['nama_emp'] . "</option>";
+											echo "<option value='$managerData[npp]' $cek>" . $managerData['nama_emp'] . "</option>";
 										}
 										?>
 									</select>
