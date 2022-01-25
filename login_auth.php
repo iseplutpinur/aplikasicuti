@@ -3,7 +3,6 @@
 session_start();
 // memanggil file koneksi
 include("dist/config/koneksi.php");
-
 // mengecek apakah tombol login sudah di tekan atau belum
 if (isset($_POST['login'])) {
 	// mengecek apakah username dan password sudah di isi atau belum

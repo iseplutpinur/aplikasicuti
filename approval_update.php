@@ -18,7 +18,7 @@ if($aksi=="2"){
 			WHERE no_cuti='". $no ."'";
 		$ress = mysqli_query($conn, $sql);
 		header("location: app_wait.php?act=update&msg=success");
-	
+
 }else{
 	$stt="Approved";
 	$num	=1;
@@ -28,6 +28,5 @@ if($aksi=="2"){
 			WHERE no_cuti='". $no ."'";
 		$ress = mysqli_query($conn, $sql);
 		header("location: app_wait.php?act=update&msg=success");
-	
+
 }
-?>

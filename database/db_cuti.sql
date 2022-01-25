@@ -2,17 +2,17 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: Jan 19, 2022 at 05:15 AM
--- Server version: 10.4.20-MariaDB
--- PHP Version: 7.4.21
+-- Host: 127.0.0.1
+-- Generation Time: Jan 25, 2022 at 06:36 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 7.4.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
 --
--- Database: `db_cuti`
+-- Database: `almardiy_aplikasicuti`
 --
 
 -- --------------------------------------------------------
@@ -67,8 +67,7 @@ CREATE TABLE `cuti` (
 --
 
 INSERT INTO `cuti` (`no_cuti`, `npp`, `tgl_pengajuan`, `tgl_awal`, `tgl_akhir`, `durasi`, `keterangan`, `leader`, `manager`, `spv`, `stt_cuti`, `ket_reject`, `hrd_app`, `lead_app`, `spv_app`, `mng_app`) VALUES
-('19012022110047', '12345', '2022-01-19', '2022-01-20', '2022-01-24', 5, '123', '11111', '', '22222', 'Menunggu Approval Supervisor', '', 0, 1, 0, 0),
-('19012022111244', '12345', '2022-01-19', '2022-01-20', '2022-01-21', 2, '11', '', '33333', '', 'Approved', '', 1, 0, 0, 1);
+('26012022003318', '12345', '2022-01-26', '2022-01-26', '2022-01-30', 5, '1', '', '33333', '', 'Approved', '', 1, 0, 0, 0);
 
 -- --------------------------------------------------------
 
